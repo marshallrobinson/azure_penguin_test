@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: azure-penguin-test-service
+spec:
+  type: LoadBalancer # Exposes the service externally using a cloud provider's load balancer.
+  selector:
+    app: azure-penguin-test # This must match the label in the deployment
+  ports:
+    - protocol: TCP
+      port: 80       # The port the service is exposed on
+      targetPort: 8000 # The port the container is listening on

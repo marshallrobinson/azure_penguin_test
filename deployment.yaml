@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-penguin-test-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: azure-penguin-test
+  template:
+    metadata:
+      labels:
+        app: azure-penguin-test
+    spec:
+      containers:
+      - name: azure-penguin-test
+        # IMPORTANT: Replace the image name with your ACR name!
+        image: mypenguinacrdate72025.azurecr.io/penguin-api:v1 
+        ports:
+        - containerPort: 8000
