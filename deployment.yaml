@@ -15,6 +15,6 @@ spec:
       containers:
       - name: azure-penguin-test
         # IMPORTANT: Replace the image name with your ACR name!
-        image: mypenguinacrdate72025.azurecr.io/penguin-api:v1 
+        image: mypenguinacrdate72025.azurecr.io/azure_penguin_test:v1 
         ports:
         - containerPort: 8000
